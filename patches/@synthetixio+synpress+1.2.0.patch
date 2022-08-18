@@ -1,0 +1,37 @@
+diff --git a/node_modules/@synthetixio/synpress/commands/puppeteer.js b/node_modules/@synthetixio/synpress/commands/puppeteer.js
+index 795fda1..64c4070 100644
+--- a/node_modules/@synthetixio/synpress/commands/puppeteer.js
++++ b/node_modules/@synthetixio/synpress/commands/puppeteer.js
+@@ -98,7 +98,8 @@ module.exports = {
+   waitFor: async (selector, page = metamaskWindow) => {
+     await page.waitForFunction(
+       `document.querySelector('${selector}') && document.querySelector('${selector}').clientHeight != 0`,
+-      { visible: true },
++      // Fix type error in Synpress and increase timeout for Metamask confirmations. See: https://github.com/Synthetixio/synpress/issues/418
++      { timeout: 120000 },
+     );
+     // puppeteer going too fast breaks metamask in corner cases
+     await page.waitForTimeout(300);
+diff --git a/node_modules/@synthetixio/synpress/plugins/index.js b/node_modules/@synthetixio/synpress/plugins/index.js
+index 52f74f2..a568966 100644
+--- a/node_modules/@synthetixio/synpress/plugins/index.js
++++ b/node_modules/@synthetixio/synpress/plugins/index.js
+@@ -3,7 +3,7 @@ const puppeteer = require('../commands/puppeteer');
+ const metamask = require('../commands/metamask');
+ const synthetix = require('../commands/synthetix');
+ const etherscan = require('../commands/etherscan');
+-
++const { deleteTestbotUser, getTestbotSigninUrl } = require('../../../../stack/lib/testbot')
+ /**
+  * @type {Cypress.PluginConfig}
+  */
+@@ -262,6 +262,9 @@ module.exports = (on, config) => {
+       const txSuccess = await etherscan.waitForTxSuccess(txid);
+       return txSuccess;
+     },
++    // Add custom tasks to the Cypress instance ran by synpress. See: https://github.com/Synthetixio/synpress/issues/408  
++    deleteTestbotUser,
++    getTestbotSigninUrl
+   });
+ 
+   if (process.env.BASE_URL) {

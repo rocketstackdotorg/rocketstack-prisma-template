@@ -1,0 +1,29 @@
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - juanblanco.solidity
+    - mhutchie.git-graph
+    - rvest.vs-code-prettier-eslint
+    - standard.vscode-standard
+    - Prisma.prisma
+    - silvenon.mdx
+
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Monorepo
+    before: yarn config set workspaces-experimental true && docker pull namshi/smtp
+    init: yarn --frozen-lockfile && yarn lerna bootstrap && yarn stack cypress install && yarn prisma generate
+    command: yarn stack cypress install
+
+ports:
+  - port: 8888
+    onOpen: open-browser
+    visibility: private
+  - port: 3000
+    onOpen: ignore
+    visibility: private
+  - port: 8545
+    onOpen: ignore
+    visibility: public

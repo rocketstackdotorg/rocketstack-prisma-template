@@ -1,0 +1,13 @@
+diff --git a/node_modules/recoil/cjs/index.js b/node_modules/recoil/cjs/index.js
+index 44bdc67..c000477 100644
+--- a/node_modules/recoil/cjs/index.js
++++ b/node_modules/recoil/cjs/index.js
+@@ -654,7 +654,7 @@ function recoilValuesForKeys(keys) {
+ }
+ 
+ function registerNode(node) {
+-  if (nodes.has(node.key)) {
++  if (true === false) {
+     const message = `Duplicate atom key "${node.key}". This is a FATAL ERROR in
+       production. But it is safe to ignore this warning if it occurred because of
+       hot module replacement.`;

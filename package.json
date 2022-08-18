@@ -1,0 +1,63 @@
+{
+  "name": "rocketstack",
+  "version": "0.0.1",
+  "repository": "git@github.com:rocketstack/rocketstack.git",
+  "description": "The full stack web3 framework that's ready for production. Built with Nextjs and simplicity in mind.",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@rocketstack"
+  },
+  "scripts": {
+    "stack": "env-cmd --silent yarn workspace stack",
+    "build": "yarn stack build",
+    "test": "yarn stack test",
+    "dev": "yarn stack dev",
+    "start": "yarn stack start",
+    "db:seed": "yarn prisma db seed",
+    "db:studio": "yarn prisma studio",
+    "db:push": "yarn prisma db push",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "yarn stack typecheck && yarn js typecheck",
+    "publish": "env-cmd --silent yarn lerna publish --no-private",
+    "bump": "env-cmd --silent yarn version",
+    "prepush": "env-cmd --silent yarn lint && yarn typecheck",
+    "prepare": "husky install",
+    "postinstall": "patch-package"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.1.5",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.13.0",
+    "eslint-config-next": "^12.1.5",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-jsx": "^10.0.0",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "patch-package": "^6.4.7"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
+    "cypress": "9.6.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "stack"
+  ],
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} stack/prisma/seed.ts"
+  },
+  "dependencies": {
+    "postinstall-postinstall": "^2.1.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "scope": "packages/*",
+      "ignoreChanges": ["stack"],
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "registry": "https://npm.pkg.github.com"
+    },
+    "version": {
+      "scope": "packages/*",
+      "conventionalCommits": true
+    }
+  },
+  "version": "0.0.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}

@@ -1,0 +1,19 @@
+node_modules
+/data
+
+# NPM registry config & auth.
+.npmrc
+
+# misc
+.DS_Store
+.eslintcache
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log
+/*.log
