@@ -7,8 +7,8 @@ Out-of-the-box, this stack includes the following, pre-configured:
 - 🖥  A fast, responsive front-end with [React](https://reactjs.org) & [Mui v5](https://mui.com/)
 - 🔌  REST APIs, server-side rendering & static optimization with [Next.js](https://nextjs.org)
 - 📡  Fully-typed database schema, seeding, versioning & migrations with [Prisma](https://www.primsa.io/) & [PlanetScale](https://planetscale.com/)
-- 🔐  Client and server-side authentication with [NextAuth](https://nextauth.org)
 - ⚡️  Serverless functions & continuous deployment with [Vercel](https://vercel.com/)
+- 🔐  Client and server-side authentication with [NextAuth](https://nextauth.org)
 - 🌈  Connection with multiple web3 wallets & multiple blockchain networks with [Rainbow-kit](https://rainbowkit.com/)
 - 🪝  Custom hooks for state management & data caching with [Recoil](https://recoiljs.org/)
 - 💳  Fiat & crypto payment API with [Stripe](https://stripe.com)
@@ -16,13 +16,12 @@ Out-of-the-box, this stack includes the following, pre-configured:
 - 🇺🇳  Translation & internationalization with [i18next](https://www.i18next.com/) & [Deepl](https://deepl.com/)
 - ✅  End-to-end testing & CI with [Synpress](https://github.com/Synthetixio/synpress) & [Github actions](https://github.com/features/actions)
 - 🧾  Form validation with [react-cool-form](https://react-cool-form.netlify.app/)
+- 🚨  Alerts & snackbars with [Notistack](https://github.com/iamhosseindhv/notistack)
 - 📈  Analytics with [Matomo](https://matomo.org/)
-- 🤓  [Types](https://www.typescriptlang.org) & [standard.js](https://standardjs.com) coding style enforced with [ESLint](https://eslint.org/) & [Husky](https://github.com/typicode/husky) hooks 
+- 🤓  [Type checks](https://www.typescriptlang.org) (from backend to frontend thanks to Prisma) & [standard.js](https://standardjs.com) coding style enforced with [ESLint](https://eslint.org/) & [Husky](https://github.com/typicode/husky) 
 - 📚  Interactive documentation with [Code Hike](https://codehike.org) & [MDX](https://mdxjs.com/)
 - 🚢  Shipping & shipping rates with [Sendcloud](https://sendcloud.com/)
 - 📊  Soon™️: GraphQL endpoint & blockchain data with [Apollo](https://apollographql.com) & [TheGraph](https://thegraph.com/)
-- 👤  Soon™️: KYC, KYB & ID verification with [Synaps](https://synaps.io)
-- 🚦  Soon™️: Front-end test cases with [Storybook](https://storybook.js.org/)
 - 🏛  Soon™️: Project funding & open-source governance with [Organigram](https://organigram.io/)
 
 If you haven't already, you will have to set up the following accounts (for free):
